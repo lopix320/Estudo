@@ -1,0 +1,7 @@
+lista = [1, 2, 3]
+dicionario = {'nome': 'Pedro', 'idade': 22}     
+tupla = ("oi","dois")
+
+
+print(lista)
+
