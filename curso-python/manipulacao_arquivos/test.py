@@ -73,3 +73,4 @@ import math
 #     machine = IceCreamMachine(["vanilla", "chocolate"], ["chocolate sauce"])
 #     print(machine.scoops()) #should print[['vanilla', 'chocolate sauce'], ['chocolate', 'chocolate sauce']]
 
+print("Olá")
