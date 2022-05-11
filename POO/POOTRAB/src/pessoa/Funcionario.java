@@ -1,4 +1,6 @@
-package salario;
+package pessoa;
+
+import salario.*;
 
 public class Funcionario extends Pessoa {
 
