@@ -9,13 +9,12 @@ public class Pilha {
         if (inicio == null) {
             inicio = new Elemento(objeto, null, null);
             aux = inicio;
-            posicaoPilha++;
         } else {
             atual = new Elemento(objeto, null, aux);
             aux.setProx(atual);
             aux = atual;
-            posicaoPilha++;
         }
+        posicaoPilha++;
     }
 
     public boolean pilhaVazia() {
@@ -29,16 +28,15 @@ public class Pilha {
         if (pilhaVazia()) {
             System.out.println("Pilha vazia!");
         }
-        System.out.println(this.posicaoPilha + 1);
+        System.out.println("\nTamanho da pilha: [" + this.posicaoPilha + 1 + "]\n");
     }
 
     public void exibir() {
         Elemento x = inicio;
         while (x != null) {
-            if(x.getObjeto() == null){
+            if (x.getObjeto() == null) {
                 System.out.println("Pilha Vazia!");
-            }
-            else{
+            } else {
                 System.out.println(x.getObjeto());
             }
             x = x.getProx();
@@ -51,14 +49,12 @@ public class Pilha {
         if (pilhaVazia()) {
             System.out.println("Pilha vazia!");
         } else {
-            if(atual.getAnt() == null){
-              atual.setObjeto(null);
-                System.out.println("Pilha Vazia");
-            }
-            else{
-            x = atual.getAnt();
-            x.setProx(null);
-            atual = x;
+            if (atual.getAnt() == null) {
+                atual.setObjeto(null);
+            } else {
+                x = atual.getAnt();
+                x.setProx(null);
+                atual = x;
             }
             posicaoPilha--;
         }
@@ -70,7 +66,7 @@ public class Pilha {
         if (pilhaVazia()) {
             System.out.println("Pilha vazia!");
         } else {
-            System.out.println(atual.getObjeto());
+            System.out.println("Valor no topo: [" + atual.getObjeto() + "]");
         }
     }
 

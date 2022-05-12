@@ -1,21 +1,51 @@
 package ado2;
 
+import java.util.Scanner;
+
 public class Main {
 
+    static Scanner leitor = new Scanner(System.in);
+
     public static void main(String[] args) {
+        int op = -1;
         Pilha pilha = new Pilha();
 
-        pilha.inserir(new Carro("VW", 13, "Fox", 2014));
-        pilha.inserir(new Carro("VW", 25, "Jetta", 2022));    
-//        pilha.inserir(new Carro("Fiat", 45, "Argo", 2022));;
-//        pilha.inserir(new Carro("Smart", 67, "Fortwo", 2022));
+        while (op != 0) {
 
-        pilha.exibir();
-        pilha.remover();
-        pilha.remover();
-        pilha.exibir();
-        pilha.tamanho();
-        pilha.topo();
+            System.out.println("0 - Sair\n"
+                    + "1 - Inserir\n"
+                    + "2 - Remover\n"
+                    + "3 - Tamanho\n"
+                    + "4 - Topo\n"
+                    + "5 - Pilha Vazia");
+            op = leitor.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.println("Digite numero que quer inserir:");
+                    int num = leitor.nextInt();
+                    pilha.inserir(num);
+                    op = -1;
+                    break;
+                case 2:
+                    pilha.remover();
+                    pilha.exibir();
+                    op = -1;
+                    break;
+                case 3:
+                    pilha.tamanho();
+                    op = -1;
+                    break;
+                case 4:
+                    pilha.topo();
+                    op = -1;
+                    break;
+                case 5:
+                    pilha.pilhaVazia();
+                    op = -1;
+                    break;
+            }
+        }
+
     }
 
 }
