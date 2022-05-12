@@ -35,7 +35,12 @@ public class Pilha {
     public void exibir() {
         Elemento x = inicio;
         while (x != null) {
-            System.out.println(x.getObjeto());
+            if(x.getObjeto() == null){
+                System.out.println("Pilha Vazia!");
+            }
+            else{
+                System.out.println(x.getObjeto());
+            }
             x = x.getProx();
         }
     }
@@ -46,9 +51,15 @@ public class Pilha {
         if (pilhaVazia()) {
             System.out.println("Pilha vazia!");
         } else {
+            if(atual.getAnt() == null){
+              atual.setObjeto(null);
+                System.out.println("Pilha Vazia");
+            }
+            else{
             x = atual.getAnt();
             x.setProx(null);
             atual = x;
+            }
             posicaoPilha--;
         }
     }
