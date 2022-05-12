@@ -6,7 +6,7 @@ public class Main {
         Pilha pilha = new Pilha();
 
         pilha.inserir(new Carro("VW", 13, "Fox", 2014));
-        pilha.inserir(new Carro("VW", 25, "Jetta", 2022));
+        pilha.inserir(new Carro("VW", 25, "Jetta", 2022));    
 //        pilha.inserir(new Carro("Fiat", 45, "Argo", 2022));;
 //        pilha.inserir(new Carro("Smart", 67, "Fortwo", 2022));
 
