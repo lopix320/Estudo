@@ -1,79 +1,81 @@
 package ado2;
 
-public class Pilha {
+public class Fila {
 
     private Elemento inicio = null, atual, aux;
-    private int posicaoPilha = -1;
-
-    public void inserir(Object objeto) {
-        if (inicio == null) {
-            inicio = new Elemento(objeto, null, null);
-            aux = inicio;
-        } else {
-            atual = new Elemento(objeto, null, aux);
-            aux.setProx(atual);
-            aux = atual;
-        }
-        posicaoPilha++;
-    }
+    int Elementos = -1;
 
     public boolean Empty() {
-        if (this.posicaoPilha == -1) {
+        if (Elementos == -1) {
             return true;
         }
         return false;
     }
 
-    public void tamanho() {
-        if (Empty()) {
-            System.out.println("Pilha vazia!");
+    public void inserir(Object u) {
+        if (inicio == null) {
+            inicio = new Elemento(u, null, null);
+            aux = inicio;
+        } else {
+            atual = new Elemento(u, null, aux);
+            aux.setProx(atual);
+            aux = atual;
         }
-        System.out.println("\nTamanho da pilha: [" + (this.posicaoPilha + 1) + "]\n");
+        Elementos++;
+    }
+
+    public void remover() {
+        Elemento x;
+        if (Empty()) {
+            System.out.println("Fila vazia!");
+        } else {
+            System.out.println("Elemento " + inicio.getObjeto() + " removido!");
+            if (Elementos == 0) {
+                inicio = null;
+            } else {
+
+                x = inicio.getProx();
+                x.setAnt(null);
+                inicio = x;
+            }
+            Elementos--;
+        }
     }
 
     public void exibir() {
         Elemento x = inicio;
         System.out.print("[");
         if (x == null) {
-            System.out.print("Pilha vazia!");
+            System.out.print("Fila vazia!");
         } else {
             while (x != null) {
-
-                System.out.print(" " + x.getObjeto() + " ");
+                if (x == null) {
+                    System.out.print("Fila vazia!");
+                } else {
+                    System.out.print(" " + x.getObjeto() + " ");
+                }
                 x = x.getProx();
             }
         }
         System.out.print("]");
     }
 
-    public void remover() {
-        Elemento x;
+    public void tamanho() {
+        if (Empty()) {
+            System.out.println("Fila vazia!");
+        }
+        System.out.println("\nTamanho da fila: [" + (this.Elementos + 1) + "]\n");
+    }
+
+    public void frente() {
         if (Empty()) {
             System.out.println("Pilha vazia!");
         } else {
-            System.out.println("Elemento " + atual.getObjeto() + " removido!");
-            if (posicaoPilha == 0) {
-                inicio = null;
-            } else {
-                x = atual.getAnt();
-                x.setProx(null);
-                atual = x;
-            }
-            posicaoPilha--;
+            System.out.println("Valor no topo: [" + inicio.getObjeto() + "]");
         }
     }
 
-    public void topo() {
-        int i = 0;
-        Elemento x = inicio;
-        if (Empty()) {
-            System.out.println("Pilha vazia!");
-        } else {
-            System.out.println("Valor no topo: [" + atual.getObjeto() + "]");
-        }
-    }
-
-    private class Elemento {
+    public class Elemento {
 
         private Object objeto;
         private Elemento prox;
@@ -109,5 +111,4 @@ public class Pilha {
             this.ant = ant;
         }
     }
-
 }
