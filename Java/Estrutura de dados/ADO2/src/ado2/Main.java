@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Scanner leitor = new Scanner(System.in);
-
     public static void main(String[] args) {
+        Scanner leitor = new Scanner(System.in);
         int op = -1;
         int po = -1;
         Pilha pilha = new Pilha();
@@ -107,7 +106,8 @@ public class Main {
                 }
                 po = -1;
             }
-            break;
+
+//            break;
         }
     }
 }
