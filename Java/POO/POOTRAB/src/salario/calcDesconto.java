@@ -5,6 +5,13 @@ public class calcDesconto {
     private float INSS, IRPF, VT, VA, VR, CVN;
     private double salario;
 
+    public double retornaSalario() {
+
+        salario = salario - INSS - IRPF - VT - VA - VR - CVN;
+        return salario;
+
+    }
+
     public Float INSS() {
         if (salario <= 1212) {
             INSS = (float) (salario * 0.075);
@@ -28,23 +35,24 @@ public class calcDesconto {
     }
 
     public Float IRPF() {
-        if (salario <= 1903.98) {
+        double salario1 = salario - INSS();
+        if (salario1 <= 1903.98) {
             IRPF = 0;
             return IRPF;
         }
-        if (salario >= 1903.99 && salario <= 2826.65) {
-            IRPF = (float) (salario * 0.075);
+        if (salario1 >= 1903.99 && salario1 <= 2826.65) {
+            IRPF = (float) (salario1 * 0.075);
             return IRPF;
         }
-        if (salario >= 2826.66 && salario <= 3751.05) {
-            IRPF = (float) (salario * 0.15);
+        if (salario1 >= 2826.66 && salario1 <= 3751.05) {
+            IRPF = (float) (salario1 * 0.15);
             return IRPF;
         }
-        if (salario >= 3751.06 && salario <= 4664.68) {
-            IRPF = (float) (salario * 0.225);
+        if (salario1 >= 3751.06 && salario1 <= 4664.68) {
+            IRPF = (float) (salario1 * 0.225);
             return IRPF;
         } else {
-            IRPF = (float) (salario * 0.275);
+            IRPF = (float) (salario1 * 0.275);
             return IRPF;
         }
 
@@ -57,7 +65,7 @@ public class calcDesconto {
         }
         return null;
     }
-    
+
     public Float VA() {
         if (salario > 3636.00) {
             VA = (float) (salario * 0.02);
@@ -65,23 +73,21 @@ public class calcDesconto {
         }
         return null;
     }
-    
+
     public Float VR() {
         if (salario <= 1212.00) {
             System.out.println("ISENTO!");;
-        }
-        else if(salario > 1212.01){
+        } else if (salario > 1212.01) {
             VR = (float) (salario * 0.03);
             return VR;
         }
         return null;
     }
-    
+
     public Float CVN() {
         if (salario <= 1212.00) {
             System.out.println("ISENTO!");;
-        }
-        else if(salario > 1212.01){
+        } else if (salario > 1212.01) {
             CVN = (float) (salario * 0.04);
             return CVN;
         }
@@ -143,6 +149,5 @@ public class calcDesconto {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-    
-    
+
 }

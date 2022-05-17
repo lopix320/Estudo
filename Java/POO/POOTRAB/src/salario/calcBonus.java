@@ -4,18 +4,18 @@ package salario;
 
 public class calcBonus {
     
-    private double bonus;
+    private double salBonus;
     
     public calcBonus(double salario, double bonus){
-        this.bonus = salario + bonus;
+        this.salBonus = salario + bonus;
     }
 
-    public double getBonus() {
-        return bonus;
+    public double getSalBonus() {
+        return salBonus;
     }
 
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
+    public void setSalBonus(double salBonus) {
+        this.salBonus = salBonus;
     }
-    
+
 }

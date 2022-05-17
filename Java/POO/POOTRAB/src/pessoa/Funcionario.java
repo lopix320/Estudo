@@ -1,21 +1,19 @@
 package pessoa;
 
-import salario.*;
-
 public class Funcionario extends Pessoa {
 
     private double salario, bonus;
-    private int ID;
+    private int ID, horas;
     
 
-    public Funcionario(double salario, double bonus, int ID) {
+    public Funcionario(double salario, double bonus, int ID, int horas) {
         this.salario = salario;
         this.bonus = bonus;
+        this.horas = horas;
         this.ID = ID;
     }
 
     Funcionario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     @Override
@@ -23,11 +21,18 @@ public class Funcionario extends Pessoa {
         String dados;
         dados = super.exibirDados();
 
-        dados += "Salario: " + salario;
-        dados += "Bonus: " + bonus;
+        dados += "Salario: " + salario + "\n";
+        dados += "Bonus: " + bonus + "\n";
+        dados += "Horas trabalhadas: " + horas + "\n";
         dados += "ID: " + ID;
 
         return dados;
+    }
+    
+    public void calcularHoras(int horas){
+        int _1h = 50;
+        int conta = horas * _1h;
+        this.salario = this.salario + conta;
     }
 
     public double getSalario() {
