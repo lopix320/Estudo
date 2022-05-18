@@ -34,24 +34,28 @@ public class calcDesconto {
     }
 
     public Float IRPF() {
-        double salario1 = salario - INSS();
+        double salario1 = (salario - INSS()) - 189.59;
         if (salario1 <= 1903.98) {
             IRPF = 0;
             return IRPF;
         }
         if (salario1 >= 1903.99 && salario1 <= 2826.65) {
             IRPF = (float) (salario1 * 0.075);
+            IRPF = IRPF - (float) 142.80;
             return IRPF;
         }
         if (salario1 >= 2826.66 && salario1 <= 3751.05) {
             IRPF = (float) (salario1 * 0.15);
+            IRPF = IRPF - (float) 354.80;
             return IRPF;
         }
         if (salario1 >= 3751.06 && salario1 <= 4664.68) {
             IRPF = (float) (salario1 * 0.225);
+            IRPF = IRPF - (float) 636.13;
             return IRPF;
         } else {
             IRPF = (float) (salario1 * 0.275);
+            IRPF = IRPF - (float) 869.36;
             return IRPF;
         }
 

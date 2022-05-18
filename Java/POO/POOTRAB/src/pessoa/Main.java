@@ -20,7 +20,7 @@ public class Main {
 
         while (aux2 != 2) {
             System.out.println("[0] - Inserir dados do funcionario\n"
-                    + "[1] - Exibir dados e holerite\n"
+                    + "[1] - Exibir holerite do ultimo funcionario adicionado\n"
                     + "[2] - Sair");
             aux2 = leitor.nextInt();
             switch (aux2) {
@@ -84,7 +84,7 @@ public class Main {
                                          + "|DEBITOS: - \t\t\t\t\t\t|\n"
                                          + "|Desconto INSS: " + calc.INSS());
                         System.out.print("\t\t\t\t\t|\n");
-                        System.out.print("|Desconto IRPF: " + calc.IRPF());
+                        System.out.printf("|Desconto IRPF: %.2f", calc.IRPF());
                         System.out.print("\t\t\t\t\t|\n");
                         System.out.print("|Desconto VT: " + calc.VT());
                         System.out.print("\t\t\t\t\t|\n");
