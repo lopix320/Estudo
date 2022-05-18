@@ -62,7 +62,7 @@ public class calcDesconto {
             VT = (float) (salario * 0.06);
             return VT;
         }
-        return (float) 0.0;
+        return null;
     }
 
     public Float VA() {
@@ -70,35 +70,81 @@ public class calcDesconto {
             VA = (float) (salario * 0.02);
             return VA;
         }
-        return (float) 0.0;
+        return null;
     }
 
     public Float VR() {
         if (salario <= 1212.00) {
-            return (float) 0.0;
-        } else{
-            if (salario > 1212.01) {
+            System.out.println("ISENTO!");;
+        } else if (salario > 1212.01) {
             VR = (float) (salario * 0.03);
-            }
             return VR;
-        } 
+        }
+        return null;
     }
 
     public Float CVN() {
         if (salario <= 1212.00) {
-            return (float) 0.0;
-        } else{
-            if (salario > 1212.01) {
+            System.out.println("ISENTO!");;
+        } else if (salario > 1212.01) {
             CVN = (float) (salario * 0.04);
-            }
             return CVN;
         }
+        return null;
+    }
+
+    public float getINSS() {
+        return INSS;
+    }
+
+    public void setINSS(float INSS) {
+        this.INSS = INSS;
+    }
+
+    public float getIRPF() {
+        return IRPF;
+    }
+
+    public void setIRPF(float IRPF) {
+        this.IRPF = IRPF;
+    }
+
+    public float getVT() {
+        return VT;
+    }
+
+    public void setVT(float VT) {
+        this.VT = VT;
+    }
+
+    public float getVA() {
+        return VA;
+    }
+
+    public void setVA(float VA) {
+        this.VA = VA;
+    }
+
+    public float getVR() {
+        return VR;
+    }
+
+    public void setVR(float VR) {
+        this.VR = VR;
+    }
+
+    public float getCVN() {
+        return CVN;
+    }
+
+    public void setCVN(float CVN) {
+        this.CVN = CVN;
     }
 
     public double getSalario() {
         return salario;
     }
-    
+
     public void setSalario(double salario) {
         this.salario = salario;
     }
