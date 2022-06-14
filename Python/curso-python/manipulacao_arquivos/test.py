@@ -6,6 +6,8 @@ import math
 
 # data = response.json()
 
+# print(type(data))
+
 # for items in data.get('results'):
 #     print(items)
 
@@ -72,5 +74,3 @@ import math
 # if __name__ == "__main__":
 #     machine = IceCreamMachine(["vanilla", "chocolate"], ["chocolate sauce"])
 #     print(machine.scoops()) #should print[['vanilla', 'chocolate sauce'], ['chocolate', 'chocolate sauce']]
-
-print("Olá")
